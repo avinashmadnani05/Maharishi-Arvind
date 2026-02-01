@@ -1,0 +1,758 @@
+/* ==================== CLINIC TOKEN BOOKING - AUTH STYLES ==================== */
+/* Premium Web App Design - Fully Responsive */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #ec4899;
+  --gradient-main: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #8b5cf6 50%,
+    #ec4899 100%
+  );
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+/* ==================== BASE RESET ==================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== AUTH CONTAINER ==================== */
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-main);
+  padding: 24px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background decoration */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.15) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.auth-container::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ==================== AUTH CARD ==================== */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== LOGO SECTION ==================== */
+.auth-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-logo-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-main);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-title {
+  color: var(--gray-900);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  color: var(--gray-700);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ==================== FORM STYLES ==================== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--gray-50);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  color: var(--gray-900);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.form-input:hover {
+  border-color: #cbd5e1;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* ==================== SELECT DROPDOWN ==================== */
+.form-select {
+  width: 100%;
+  padding: 14px 16px;
+  padding-right: 48px;
+  background: var(--gray-50);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  color: var(--gray-900);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23475569'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.form-select:hover {
+  border-color: #cbd5e1;
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.form-select option {
+  background: white;
+  color: var(--gray-900);
+  padding: 12px;
+}
+
+/* ==================== ROLE BADGES ==================== */
+.role-preview {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.role-badge {
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-badge.patient {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.role-badge.doctor {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--info);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.role-badge.admin {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* ==================== SUBMIT BUTTON ==================== */
+.auth-button {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--gradient-main);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==================== MESSAGES ==================== */
+.auth-message {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.auth-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--error);
+}
+
+.auth-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--success);
+}
+
+/* ==================== AUTH LINK ==================== */
+.auth-link {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.auth-link p {
+  color: var(--gray-700);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.auth-link a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.auth-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==================== LOADING SPINNER ==================== */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--white);
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== DASHBOARD STYLES ==================== */
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-main);
+  padding: 24px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  position: relative;
+}
+
+.dashboard-container::before,
+.dashboard-container::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.dashboard-container::before {
+  top: -30%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.15) 0%,
+    transparent 60%
+  );
+}
+
+.dashboard-container::after {
+  bottom: -20%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 60%
+  );
+}
+
+.dashboard-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.dashboard-header h1 {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 12px 24px;
+  background: var(--error);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.welcome-section h2 {
+  color: var(--gray-900);
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.role-tag {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-tag.patient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.role-tag.doctor {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.role-tag.admin {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.dashboard-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.info-card {
+  background: var(--gray-50);
+  padding: 20px 16px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--gray-100);
+  transition: all 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-card p {
+  color: var(--gray-800);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  word-break: break-all;
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.action-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--white);
+}
+
+.action-btn.patient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.action-btn.doctor {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.action-btn.admin {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .auth-card,
+  .dashboard-card {
+    padding: 56px;
+  }
+
+  .auth-title {
+    font-size: 32px;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .auth-card,
+  .dashboard-card {
+    max-width: 95%;
+    padding: 40px;
+  }
+}
+
+/* Mobile Landscape & Small Tablet (600px - 768px) */
+@media (max-width: 768px) {
+  .auth-container,
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .auth-card,
+  .dashboard-card {
+    padding: 36px 28px;
+    border-radius: var(--radius-lg);
+  }
+
+  .auth-logo-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
+
+  .auth-title {
+    font-size: 24px;
+  }
+
+  .dashboard-info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .info-card {
+    padding: 16px 12px;
+  }
+
+  .info-card h3 {
+    font-size: 10px;
+  }
+
+  .info-card p {
+    font-size: 12px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .auth-container,
+  .dashboard-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 32px;
+  }
+
+  .auth-card,
+  .dashboard-card {
+    padding: 32px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .auth-logo-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+    border-radius: var(--radius-md);
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
+
+  .auth-subtitle {
+    font-size: 14px;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .auth-button {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 18px;
+  }
+
+  .logout-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .welcome-section h2 {
+    font-size: 22px;
+  }
+
+  .role-tag {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  .dashboard-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    text-align: left;
+  }
+
+  .info-card h3 {
+    margin: 0;
+  }
+
+  .info-card p {
+    text-align: right;
+    font-size: 14px;
+  }
+
+  .dashboard-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    max-width: 100%;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Very Small Devices (360px and below) */
+@media (max-width: 360px) {
+  .auth-card,
+  .dashboard-card {
+    padding: 24px 18px;
+  }
+
+  .auth-title {
+    font-size: 20px;
+  }
+
+  .welcome-section h2 {
+    font-size: 20px;
+  }
+}
